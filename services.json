@@ -1,0 +1,54 @@
+[
+	{
+		"name": "PwnSquad",
+		"children": [
+			{
+				"name": "PwnSquad.net",
+				"key": "pwnsquad-site",
+				"monitor": {
+					"type": "http",
+					"url": "https://pwnsquad.net/"
+				}
+			},
+			{
+				"name": "PwnBot",
+				"key": "pwnbot",
+				"monitor": { "type": "ping" }
+			}
+		]
+	},
+	{
+		"name": "Crypticat",
+		"children": [
+			{
+				"name": "Web Client",
+				"key": "crypticat-web",
+				"monitor": {
+					"type": "http",
+					"url": "https://c.kognise.dev/"
+				}
+			},
+			{
+				"name": "Socket (U)",
+				"key": "crypticat-socket",
+				"monitor": {
+					"type": "http",
+					"url": "https://u.kognise.dev/"
+				}
+			}
+		]
+	},
+	{
+		"name": "Kognise.dev",
+		"key": "kognise-site",
+		"monitor": {
+			"type": "http",
+			"url": "https://kognise.dev/"
+		}
+	},
+	{
+		"name": "Coronabot",
+		"key": "coronabot",
+		"monitor": { "type": "ping" }
+	}
+]

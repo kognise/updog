@@ -1,0 +1,38 @@
+meter {
+  --height: 10px;
+  --radius: 0 0 var(--punct-radius-sm) var(--punct-radius-sm);
+  --transition: 240ms all linear;
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  bottom: 0;
+  height: var(--height);
+  border: none;
+  border-radius: var(--radius);
+  display: block;
+  transition: var(--transition);
+  background: var(--background);
+}
+
+meter::-webkit-meter-bar {
+  border-radius: var(--radius);
+  border: none;
+  background: none;
+}
+
+meter::-moz-meter-bar {
+  background: var(--highlight);
+  border-radius: var(--radius);
+}
+meter::-webkit-meter-inner-element {
+  padding: 0;
+  display: block;
+  margin: 0;
+  border: none;
+}
+meter::-webkit-meter-optimum-value,
+meter::-webkit-meter-suboptimal-value,
+meter::-webkit-meter-even-less-good-value {
+  background: var(--highlight);
+  border: none;
+}

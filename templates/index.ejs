@@ -1,0 +1,38 @@
+<% const renderServices = (services) => { %>
+  <% for (const service of services) { %>
+    <% if (service.children) { %>
+      <details>
+        <summary><strong><%= service.name %></strong></summary>
+
+        <%= renderServices(service.children) %>
+      </details>
+    <% } else { %>
+      <%
+        const status = statuses[service.key]
+        const uptimePercent = Math.floor((status.uptime / status.checks) * 100)
+      %>
+
+      <article>
+        <h3><%= service.name %></h3>
+        <p><%= status.up ? 'Up' : 'Down' %></p>
+        <meter value='<%= uptimePercent %>' min='0' max='100'>
+          <%= uptimePercent %>% uptime
+        </meter>
+      </article>
+    <% } %>
+  <% } %>
+<% } %>
+    
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/water.css@2/out/water.css'>
+    <link rel='stylesheet' href='/style.css'>
+  </head>
+
+  <body>
+    <%= renderServices(services) %>
+    
+    <pre><code><%= JSON.stringify(statuses, null, 2) %></code></pre>
+  </body>
+</html>

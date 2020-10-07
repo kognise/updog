@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "deta": "^0.0.7",
+    "ejs": "^3.1.5",
+    "node-fetch": "^2.6.1"
+  }
+}
